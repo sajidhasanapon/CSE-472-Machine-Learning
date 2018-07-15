@@ -16,7 +16,7 @@ X_test = X_validate_and_test[2000:]
 
 
 
-best_lambd, best_V = pickle.load(open("model", "rb"))
+best_lambd, best_V = pickle.load(open("model.pickle", "rb"))
 U = predict_user_factors(X_test, best_V, best_lambd)
 cost = get_cost(X_test, U, best_V)
 print("\n\n##################################################################################\n\n")

@@ -2,7 +2,7 @@ import pandas as pd
 from methods import *
 import pickle
 
-X_train = pd.read_excel("ratings_train.xlsx", header=None).as_matrix()
+X_train = pd.read_excel("ratings_train.xlsx", header=None).as_matrix()  
 # X_validate = pd.read_excel("ratings_validate.xlsx", header=None).as_matrix()
 # X_test = pd.read_excel("ratings_test.xlsx", header=None).as_matrix()
 
@@ -43,7 +43,7 @@ for k in [10, 20, 40]:
 
 
 # for test / recommendation without training+validating, i.e., standalone testing
-pickle.dump((best_lambd, best_V), open("model", "wb"), protocol=pickle.HIGHEST_PROTOCOL)
+pickle.dump((best_lambd, best_V), open("model.pickle", "wb"), protocol=pickle.HIGHEST_PROTOCOL)
 
 
 # human readable format of the model
